@@ -1,15 +1,10 @@
 // src/App.js
-import React, { useState } from 'react';
-// import { getOllamaResponse } from './lib/ollamaClient';
+import React from 'react';
 
 function App() {
-  const [input, setInput] = useState('');
-  const [response, setResponse] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // const result = await getOllamaResponse(input);
-    // setResponse(result);
   };
 
   return (
@@ -20,12 +15,12 @@ function App() {
           <input
             type="text"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            // onChange={(e) => setInput(e.target.value)}
             placeholder="Ask me anything..."
           />
           <button type="submit">Send</button>
         </form>
-        {response && <p>Response: {response}</p>}
+        {/* {response && <p>Response: {response}</p>} */}
       </header>
     </div>
   );
