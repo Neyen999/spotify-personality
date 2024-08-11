@@ -14,7 +14,7 @@ function App() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            value={input}
+            // value={input}
             // onChange={(e) => setInput(e.target.value)}
             placeholder="Ask me anything..."
           />
