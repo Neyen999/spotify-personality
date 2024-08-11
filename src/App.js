@@ -1,22 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+// import { getOllamaResponse } from './lib/ollamaClient';
 
 function App() {
+  const [input, setInput] = useState('');
+  const [response, setResponse] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // const result = await getOllamaResponse(input);
+    setResponse(result);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Ollama Chat</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Ask me anything..."
+          />
+          <button type="submit">Send</button>
+        </form>
+        {response && <p>Response: {response}</p>}
       </header>
     </div>
   );
