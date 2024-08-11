@@ -9,7 +9,7 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     // const result = await getOllamaResponse(input);
-    setResponse(result);
+    // setResponse(result);
   };
 
   return (
